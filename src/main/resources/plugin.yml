@@ -1,0 +1,65 @@
+name: SmartChat
+version: 1.1
+main: com.bstudio.smartchat.smartchat.SmartChat
+api-version: 1.13
+author: ProToTypMMM
+description: A lightweight chat plugin with everything you need for your server to start!
+
+commands:
+  chat:
+    description: Main command for SmartChat plugin.
+    usage: /<command> <on|off|clear|send|reload>
+    aliases: [sc,smartchat]
+  adminchat:
+    description: Command for admin chat from SmartChat plugin.
+    usage: /<command> <message>
+    aliases: [ac]
+
+permissions:
+  smartchat.color:
+    description: Allows player to use color codes in chat messages.
+    default: false
+  smartchat.mute.bypass:
+    description: Allows player to write when chat is turned off.
+    default: false
+  smartchat.mute:
+    description: Allows player to toggle chat on/off.
+    default: false
+  smartchat.clear:
+    description: Allows player to clear chat.
+    default: false
+  smartchat.send:
+    description: Allows player to send custom chat announcements using /chat send.
+    default: false
+  smartchat.reload:
+    description: Allows player to reload SmartChat.
+    default: false
+  smartchat.admin:
+    description: Allows player to write and receive admin chat messages.
+    default: false
+  smartchat.mentions:
+    description: Allows player to use chat mentions.
+    default: true
+  smartchat.mentions.ignore:
+    description: Makes player ignore chat mentions.
+    default: false
+  smartchat.location:
+    description: Allows player to use location tag in chat messages.
+    default: true
+  smartchat.command:
+    description: Allows player to use whole /chat command.
+    default: false
+    children:
+      smartchat.mute: true
+      smartchat.clear: true
+      smartchat.send: true
+      smartchat.reload: true
+  smartchat.*:
+    description: Gives player access to every SmartChat function.
+    default: op
+    children:
+      smartchat.color: true
+      smartchat.mute.bypass: true
+      smartchat.mentions: true
+      smartchat.command: true
+      smartchat.admin: true

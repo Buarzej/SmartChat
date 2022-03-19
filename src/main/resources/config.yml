@@ -1,0 +1,98 @@
+# ========================= #
+#     SmartChat config      #
+# ========================= #
+
+# Don't change it, this value is used to automatically update the config file.
+config-version: 2
+
+# Set the locale for all messages.
+# You can edit messages in locales by extracting "messages.properties" file from "SmartChat.jar" and putting it in the plugin's folder.
+# For a tutorial, visit our plugin's Spigot website.
+locale: en
+
+# Plugin prefix for (almost) all messages.
+prefix: "&6[SmartChat] &r"
+
+# Custom join and quit messages. Use {player} for player's display name.
+join-message: "&e{player} joined the game."
+quit-message: "&e{player} left the game."
+
+# Format in which chat and admin chat will be displayed.
+# Possible variables are {player} for player's display name and {message} for a chat message.
+chat-format: "{player}&7: &f{message}"
+admin-chat-format: "&c[AdminChat] &f{player}&7: &f{message}"
+
+# Should we use JSON chat format?
+# If so, set this to true. This will overwrite simple chat format settings above.
+# This chat format will only work in Minecraft 1.13 or newer.
+use-json-chat-format: false
+use-json-admin-chat-format: false
+
+# JSON Format in which chat and/or admin chat will be displayed.
+# You can skip this if both of the above settings are set to false.
+# For a tutorial, visit our plugin's Spigot website.
+#
+# Possible variables are {player} for player's display name and {message} for a chat message.
+# Possible hover actions are SHOW_TEXT, SHOW_ACHIEVEMENT and SHOW_ITEM.
+# Possible click actions are OPEN_URL, OPEN_FILE, RUN_COMMAND and SUGGEST_COMMAND.
+# The final message is composed of all parts with a single space between each one.
+json-chat-format:
+  name:
+    message: "{player}&7:"
+    hover-action: "SHOW_TEXT"
+    hover-value: "Click to send a private message to &d{player}"
+    click-action: "SUGGEST_COMMAND"
+    click-value: "/msg {player}"
+  message:
+    message: "&f{message}"
+
+json-admin-chat-format:
+  prefix:
+    message: "&c[AdminChat]"
+  name:
+    message: "&f{player}&7:"
+    hover-action: "SHOW_TEXT"
+    hover-value: "Click to send a private message to &d{player}"
+    click-action: "SUGGEST_COMMAND"
+    click-value: "/msg {player}"
+  message:
+    message: "&f{message}"
+    hover-action: "SHOW_TEXT"
+    hover-value:
+      - "This is the"
+      - "multi-line text"
+
+# Should we use special permission for coloring chat messages?
+# Setting this to false will allow everyone to use color codes in chat.
+enable-color-permissions: false
+
+# Should we announce everyone on toggling chat on/off?
+# If so, set this to true.
+# Otherwise, only the command sender will see a confirmation message.
+announce-chat-on: true
+announce-chat-off: true
+
+# Should we enable chat mentions?
+# When one player mentions another in a chat message, the mentioned player will be notified.
+enable-chat-mentions: true
+
+# Format in which the player's name in chat mentions will be displayed.
+# For example, "Hi Player" will become "Hi &bPlayer".
+# Note that only the mentioned player will see this change in the message.
+chat-mentions-format: "&b"
+
+# Should mentioned player be notified with sound?
+chat-mentions-sound: true
+
+# Sound which will be played to the mentioned player, along with its volume and pitch.
+# Full list of sounds is available here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+chat-mentions-sound-type: "ENTITY_CHICKEN_EGG"
+chat-mentions-sound-volume: 1
+chat-mentions-sound-pitch: 1.5
+
+# Should mentioned player be notified with action bar message?
+chat-mentions-action-bar: true
+
+# Should we enable location tags?
+# Players can use ":loc:" tag in chat messages and it will be changed to their current location.
+enable-location-tag: true
